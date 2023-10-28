@@ -1,0 +1,22 @@
+serial_no	name	date	rating	comment
+1	rockstar	1-18-2019	3	   It's alright. Gives me   some trouble some times.   
+2	rockstar	5-11-2019	5	Awesome car. Love it.
+3	suave	6-15-2019	4	Nice car. Have driven it quite   a bit with much trouble .
+4	trend	6-21-2019	3	Had issues with the brakes.
+5	maverick	9-15-2019	3	      Average   car  .  
+6	trend	12-18-2019		   
+7	suave	3-2-2020	2	I do not like it. Don't get it.
+8	starship	5-1-2020	4	Nice car. Would recommend it.
+9	rockstar	6-1-2020		
+10	spiral	1-6-2021	5	One of the best cards I've ever  had!
+11	spiral	1-25-2021	1	
+12	trend	3-2-2021	2	Decent mileage. Looks good but needs  regular maintenance  
+13	rockstar	3-10-2021	4	Have had it for several years now. 
+14	nebula	3-21-2021	5	  
+15	rockstar	9-20-2021	3	
+16	nebula	9-25-2021		   Decent car. Nothing outstanding though...
+17	trend	9-27-2021	4	 Drives fine, decent mileage, looks great...  
+18	trend	10-5-2021	5	
+19	nebula	11-15-2021	2	Would not recommend it
+20	nebula	11-25-2021	5	Love this car!!!
+21	spiral	12-5-2021	3	Has had issues... needs lot of maintenance

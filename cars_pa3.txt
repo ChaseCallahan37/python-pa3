@@ -1,0 +1,8 @@
+name#make#manufacture_year#price
+rockstar#suv#2012#36000.0
+suave#sedan#2012#33000.5
+trend#truck#2012#42000.0
+starship#suv#2014#45000.0
+maverick#sedan#2015#25000.0
+nebula#truck#2015#45000.0
+spiral#sedan#2017#35000.0

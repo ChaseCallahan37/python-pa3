@@ -1,6 +1,8 @@
 # Extras: 
     # Added Menu to select the analysis you wish to see
     # Error handling for main menu, if the user does not enter a number
+    # Average car rating by car name
+    # Average word count per rating
 
 
 import pandas as df
@@ -19,17 +21,23 @@ def main():
     car_df = get_car_data()
     review_df = get_review_data()
 
+    display_avg_word_count_per_rating(review_df)
+
     menu_options = [
         lambda: describe_col(review_df, "rating"),
         lambda: describe_col(review_df, "word_count"),
         lambda: display_rating_by_year(review_df),
         lambda: display_average_word_count(review_df),
         lambda: display_ratings_count_distribution(review_df),
-        lambda: display_yearly_ratings_by_car_make(review_df, car_df)
+        lambda: display_yearly_ratings_by_car_make(review_df, car_df),
+        lambda: display_avg_rating_by_car(review_df),
+        lambda: display_avg_word_count_per_rating(review_df)
     ]
 
+    exit_option = len(menu_options) + 1
+
     choice = get_main_menu_choice()
-    while choice != 7:
+    while choice != exit_option:
         menu_options[choice-1]()
         pause()
         choice = get_main_menu_choice()
@@ -52,6 +60,8 @@ def display_menu():
         "Average Word Count by Year",
         "Ratings Count Distribution by Seasons and Years",
         "Average Yearly Ratings Distribution by Car Make",
+        "Average Rating by Car",
+        "Average Word Count by Rating"
         "Exit"
     ]
     for num in range(1, len(menu_options) + 1):
@@ -168,7 +178,35 @@ def display_yearly_ratings_by_car_make(review_df, car_df):
     plt.xlabel("Year")
     plt.show()
 
-    pass
+def display_avg_rating_by_car(df):
+    df = df.loc[(df["rating"].notnull())]
+    df = df.loc[df["comment"].str.strip() != ""]
+    df = df.loc[df["comment"].notnull()]
+    avg_rating = df.groupby(["name"])["rating"].mean().sort_values(ascending=True)
+    print(avg_rating)
+
+    avg_rating.plot(kind="bar")
+    plt.xticks(rotation=0)
+    plt.xlabel("Car Names")
+    plt.ylabel("Average Rating")
+    plt.show()
+
+def display_avg_word_count_per_rating(df):
+    df = df.loc[(df["rating"].notnull())]
+    df = df.loc[df["comment"].str.strip() != ""]
+    df = df.loc[df["comment"].notnull()]
+
+    avg_rating_count = df.groupby(["rating"])["word_count"].mean()
+    print(avg_rating_count)
+
+    avg_rating_count.plot(kind="bar")
+    plt.title("Average Word Count by Rating")
+    plt.xlabel("Rating")
+    plt.ylabel("Word Count")
+    plt.show()
+
+
+
             
 def pause():
     input("\nPress enter to continue...")

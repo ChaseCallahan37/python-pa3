@@ -21,8 +21,6 @@ def main():
     car_df = get_car_data()
     review_df = get_review_data()
 
-    display_avg_word_count_per_rating(review_df)
-
     menu_options = [
         lambda: describe_col(review_df, "rating"),
         lambda: describe_col(review_df, "word_count"),
